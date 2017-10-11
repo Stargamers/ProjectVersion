@@ -6,7 +6,11 @@ public class ProjectVersion : ModuleRules
 {
 	public ProjectVersion(ReadOnlyTargetRules Target) : base(Target)
 	{
-		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+
+        //4.15 Include What You Use
+        bEnforceIWYU = false;
+
+        PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
 		PublicIncludePaths.AddRange(
 			new string[] {
@@ -47,9 +51,19 @@ public class ProjectVersion : ModuleRules
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
-		
-		
-		DynamicallyLoadedModuleNames.AddRange(
+
+        //APEX EXCLUSIONS
+        if (Target.Platform != UnrealTargetPlatform.Android && Target.Platform != UnrealTargetPlatform.HTML5 && Target.Platform != UnrealTargetPlatform.IOS)
+        {
+            PrivateDependencyModuleNames.AddRange(
+            new string[]
+            {
+                "APEX"
+            }
+            );
+        }
+
+        DynamicallyLoadedModuleNames.AddRange(
 			new string[]
 			{
 				// ... add any modules that your module loads dynamically here ...

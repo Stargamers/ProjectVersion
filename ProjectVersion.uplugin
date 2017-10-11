@@ -4,20 +4,21 @@
 	"VersionName": "1.0",
 	"FriendlyName": "ProjectVersion",
 	"Description": "Gives the Project Version out",
-	"Category": "Other",
+	"Category": "Stargamer",
 	"CreatedBy": "Stargamer",
 	"CreatedByURL": "https://github.com/Stargamers",
 	"DocsURL": "",
 	"MarketplaceURL": "",
-	"SupportURL": "",
-	"CanContainContent": true,
+  "SupportURL": "",
+  "EnabledByDefault" : true,
+	"CanContainContent": false,
 	"IsBetaVersion": false,
-	"Installed": false,
+	"Installed": true,
 	"Modules": [
 		{
 			"Name": "ProjectVersion",
 			"Type": "Runtime",
-			"LoadingPhase": "PreLoadingScreen"
+			"LoadingPhase": "PreDefault"
 		}
 	]
 }

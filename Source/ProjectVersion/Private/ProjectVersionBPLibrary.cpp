@@ -9,8 +9,13 @@ UProjectVersionBPLibrary::UProjectVersionBPLibrary(const FObjectInitializer& Obj
 
 }
 
-float UProjectVersionBPLibrary::ProjectVersionSampleFunction(float Param)
-{
-	return -1;
+FString UProjectVersionBPLibrary::GetProjectVersion() {
+	FString ProjectVersion;
+	GConfig->GetString(
+		TEXT("/Script/EngineSettings.GeneralProjectSettings"),
+		TEXT("ProjectVersion"),
+		ProjectVersion,
+		GGameIni
+	);
+	return ProjectVersion;
 }
-

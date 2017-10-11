@@ -27,6 +27,6 @@ class UProjectVersionBPLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_UCLASS_BODY()
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Execute Sample function", Keywords = "ProjectVersion sample test testing"), Category = "ProjectVersionTesting")
-	static float ProjectVersionSampleFunction(float Param);
+		UFUNCTION(BlueprintPure, meta = (DisplayName = "ProjectVersion", CompactNodeTitle = "ProjectVersionBluprintNode", Keywords = "ProjectVersion System info Project"), Category = "System Info")
+		static FString GetProjectVersion();
 };
