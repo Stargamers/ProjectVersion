@@ -18,7 +18,12 @@
 		{
 			"Name": "ProjectVersion",
 			"Type": "Runtime",
-			"LoadingPhase": "PreDefault"
+			"LoadingPhase": "PreDefault",
+			"WhitelistPlatforms" :
+			[
+			            "win64",
+						"Android"
+			]
 		}
 	]
 }
